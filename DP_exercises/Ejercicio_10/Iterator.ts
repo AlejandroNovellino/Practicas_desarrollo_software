@@ -103,6 +103,13 @@ class Test {
 			console.log(forwardIterator.getCurrentElement());
 		}
 
+		// It functions too as
+		/*
+		for (; forwardIterator.hasMore(); forwardIterator.getNext()) {
+			console.log(forwardIterator.getCurrentElement());
+		}
+		*/
+
 		// Reverse iterator test
 		console.log(`\nTesting reverse iterator:`);
 		let reverseIterator = this.collection.createReverseIterator();

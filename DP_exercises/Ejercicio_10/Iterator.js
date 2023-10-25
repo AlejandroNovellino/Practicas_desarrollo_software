@@ -68,6 +68,12 @@ var Test = /** @class */ (function () {
         for (forwardIterator.getFirst(); forwardIterator.hasMore(); forwardIterator.getNext()) {
             console.log(forwardIterator.getCurrentElement());
         }
+        // It functions too as
+        /*
+        for (; forwardIterator.hasMore(); forwardIterator.getNext()) {
+            console.log(forwardIterator.getCurrentElement());
+        }
+        */
         // Reverse iterator test
         console.log("\nTesting reverse iterator:");
         var reverseIterator = this.collection.createReverseIterator();
