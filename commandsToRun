@@ -1,3 +1,0 @@
-From parent directory do:
-  - 'npx tsc .\directory\fileName.ts' call the complier for the file
-  - 'node .\directory\fileName.js' call node to execute the generated javascript file
