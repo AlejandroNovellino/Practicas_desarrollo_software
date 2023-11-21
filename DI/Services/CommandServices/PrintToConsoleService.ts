@@ -1,6 +1,6 @@
 import { ICommandService } from "../ICommandService/ICommandService";
 
-class PrintToConsoleService implements ICommandService<PrintToConsole> {
+export class PrintToConsoleService implements ICommandService<PrintToConsole> {
 	execute(command: PrintToConsole): void {
 		// in theory this method should change the app state
 		console.log(command.message);
@@ -8,7 +8,7 @@ class PrintToConsoleService implements ICommandService<PrintToConsole> {
 }
 
 // Param object for the service
-class PrintToConsole {
+export class PrintToConsole {
 	// class attributes
 	message: String;
 

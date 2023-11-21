@@ -10,9 +10,11 @@ export class ErrorHandingAspect<T> extends ICommandServiceDecorator<T> {
 	// method of the aspect
 	execute(command: T): void {
 		try {
+			// execute the super command
 			super.execute(command);
 		} catch (error) {
-			console.log(`Error executing command ${super.decoratee}`);
+			// catch the error
+			console.log(`Error executing command ${command}`);
 		}
 	}
 }
