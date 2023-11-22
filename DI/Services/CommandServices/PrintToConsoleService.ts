@@ -23,4 +23,8 @@ export class PrintToConsole {
 	setMessage(message: String): void {
 		this.message = message;
 	}
+
+	static fromGenericToClass<T>(command: T): PrintToConsole {
+		return command as PrintToConsole;
+	}
 }
