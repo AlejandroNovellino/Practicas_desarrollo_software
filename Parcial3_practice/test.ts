@@ -11,4 +11,7 @@ let service: GetTicketService = new GetTicketService();
 let logger: ILogger = new Logger();
 let serviceDecorated: LoggingDecorator = new LoggingDecorator(service, logger);
 
-serviceDecorated.execute(new ParamObject('user "id" of the param object'));
+let result = serviceDecorated.execute(
+	new ParamObject('user "id" of the param object')
+);
+console.log(`Final response: ${result.result.name.value}`);

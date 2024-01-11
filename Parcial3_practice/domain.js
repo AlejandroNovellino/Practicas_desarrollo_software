@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ParamObject = exports.UserName = exports.UserId = exports.User = exports.TicketId = exports.Ticket = void 0;
+exports.Result = exports.ParamObject = exports.UserName = exports.UserId = exports.User = exports.TicketId = exports.Ticket = void 0;
 // Ticket
 var Ticket = /** @class */ (function () {
     function Ticket(userId) {
@@ -48,3 +48,18 @@ var ParamObject = /** @class */ (function () {
     return ParamObject;
 }());
 exports.ParamObject = ParamObject;
+// Result
+var Result = /** @class */ (function () {
+    function Result(r) {
+        this.isError = false;
+        this.result = r;
+    }
+    Result.prototype.setResult = function (r) {
+        this.result = r;
+    };
+    Result.prototype.setError = function (e) {
+        this.error = e;
+    };
+    return Result;
+}());
+exports.Result = Result;

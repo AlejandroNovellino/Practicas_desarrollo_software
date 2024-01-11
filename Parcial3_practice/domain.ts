@@ -52,3 +52,21 @@ export class ParamObject {
 		this.userId = value;
 	}
 }
+
+// Result
+export class Result<T> {
+	result: T;
+	error?: Error;
+	isError: boolean = false;
+
+	constructor(r: T) {
+		this.result = r;
+	}
+
+	setResult(r: T) {
+		this.result = r;
+	}
+	setError(e: Error) {
+		this.error = e;
+	}
+}

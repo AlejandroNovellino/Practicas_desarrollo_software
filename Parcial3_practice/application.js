@@ -29,6 +29,7 @@ var GetTicketService = /** @class */ (function () {
         console.log("This is the ticket id: ".concat(ticket.id));
         // this should generate the domain event
         // here we can return
+        return new domain_1.Result(user);
     };
     return GetTicketService;
 }());
@@ -39,7 +40,7 @@ var IServiceDecorator = /** @class */ (function () {
         this.serviceToDecorate = service;
     }
     IServiceDecorator.prototype.execute = function (params) {
-        this.serviceToDecorate.execute(params);
+        return this.serviceToDecorate.execute(params);
     };
     return IServiceDecorator;
 }());
@@ -52,8 +53,14 @@ var LoggingDecorator = /** @class */ (function (_super) {
         return _this;
     }
     LoggingDecorator.prototype.execute = function (params) {
-        this.serviceToDecorate.execute(params);
-        this.logger.logging("Hi", " logger");
+        var serviceResponse = this.serviceToDecorate.execute(params);
+        if (serviceResponse.isError) {
+            return serviceResponse;
+        }
+        else {
+            this.logger.logging(serviceResponse.result.id.value.toString(), "This is from logger");
+            return serviceResponse;
+        }
     };
     return LoggingDecorator;
 }(IServiceDecorator));

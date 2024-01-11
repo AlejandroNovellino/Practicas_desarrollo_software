@@ -10,4 +10,5 @@ var service = new application_1.GetTicketService();
 // logger
 var logger = new infraestructure_1.Logger();
 var serviceDecorated = new application_1.LoggingDecorator(service, logger);
-serviceDecorated.execute(new domain_1.ParamObject('user "id" of the param object'));
+var result = serviceDecorated.execute(new domain_1.ParamObject('user "id" of the param object'));
+console.log("Final response: ".concat(result.result.name.value));
